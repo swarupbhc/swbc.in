@@ -11,9 +11,11 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
+    {/* <BrowserRouter> HashRouter used for github pages*/}
     <HashRouter>
       <App />
     </HashRouter>
+    {/* </BrowserRouter> */}
   </React.StrictMode>,
 );
 
