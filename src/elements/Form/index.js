@@ -2,22 +2,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function Form(props) {
-  const {
-    name, value, type, placeholder, className, errorResponse,
-  } = props;
-
+export default function Form({
+  name, value, type, placeholder, className, errorResponse, onChange,
+}) {
   const [hasError, setHasError] = useState(null);
 
   let pattern = '';
   if (type === 'email') pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (type === 'tel') pattern = '[0-9]*';
 
-  const onChange = (event) => {
+  const handleChange = (event) => {
     const target = {
       target: {
-        // eslint-disable-next-line object-shorthand
-        name: name,
+        name,
         value: event.target.value,
       },
     };
@@ -28,9 +25,9 @@ export default function Form(props) {
     }
 
     if (type === 'tel') {
-      if (event.target.validity.valid) props.onChange(target);
+      if (event.target.validity.valid) onChange(target);
     } else {
-      props.onChange(target);
+      onChange(target);
     }
   };
 
@@ -44,50 +41,28 @@ export default function Form(props) {
           'w-95 sm:w-192 lg:w-192.5 xl:w-192.5 p-4 mx-2 mb-6 font-light text-lg text-theme-blue rounded border border-gray-400 focus:outline-none focus:ring-1 focus:ring-theme-purple',
           className,
         ].join(' ')}
-        onChange={onChange}
+        onChange={handleChange}
         rows="9"
         required
       />
     );
   }
 
-  if (type === 'tel') {
-    return (
-      <div className="flex flex-col mb-6 mx-2 lg:mx-5 ">
-        <input
-          name={name}
-          type={type}
-          placeholder={placeholder}
-          pattern={pattern}
-          value={value}
-          className={[
-            'p-4 font-light text-lg text-theme-blue rounded border border-gray-400 focus:outline-none focus:ring-1 focus:ring-theme-purple',
-            className,
-          ].join(' ')}
-          onChange={onChange}
-          required
-        />
-        {hasError && (
-          <span className="text-sm text-white bg-red-500 p-1 rounded">
-            {hasError}
-          </span>
-        )}
-      </div>
-    );
-  }
-
   return (
-    <div className="flex flex-col mb-6 mx-2 lg:mx-5 ">
+    <div className="flex flex-col mb-6 mx-2 lg:mx-5">
+      <label htmlFor={name} className="sr-only">{placeholder}</label>
       <input
+        id={name}
         name={name}
         type={type}
         placeholder={placeholder}
+        pattern={type === 'tel' ? pattern : undefined}
         value={value}
         className={[
           'p-4 font-light text-lg text-theme-blue rounded border border-gray-400 focus:outline-none focus:ring-1 focus:ring-theme-purple',
           className,
         ].join(' ')}
-        onChange={onChange}
+        onChange={handleChange}
         required
       />
       {hasError && (

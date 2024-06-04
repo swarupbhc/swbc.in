@@ -2,17 +2,19 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-
+import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 import { Transition } from '@headlessui/react';
-
 import Button from 'elements/Button';
 import BrandIcon from 'parts/BrandIcon';
 
-export default function Header(props) {
-  const { location } = props;
+export default function Header({ location }) {
   const [isCollapse, setIsCollapse] = useState(false);
   const path = location.pathname;
+
+  const toggleCollapse = () => {
+    setIsCollapse((prevState) => !prevState);
+  };
 
   return (
     <header className="header">
@@ -20,7 +22,11 @@ export default function Header(props) {
         <div className="flex justify-between px-4 lg:px-0">
           <BrandIcon />
 
-          <button className="block text-theme-blue lg:hidden focus:outline-none" onClick={() => setIsCollapse(!isCollapse)}>
+          <button
+            aria-label="Toggle navigation menu"
+            className="block text-theme-blue lg:hidden focus:outline-none"
+            onClick={toggleCollapse}
+          >
             <svg className="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path className={`${isCollapse ? 'hidden' : 'block'}`} strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
               <path className={`${!isCollapse ? 'hidden' : 'block'}`} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -28,12 +34,12 @@ export default function Header(props) {
           </button>
         </div>
 
-        <ul className="hidden text-theme-blue tracking-widest items-center lg:flex flex-row mt-0">
+        <ul role="navigation" className="hidden text-theme-blue tracking-widest items-center lg:flex flex-row mt-0">
           <li>
             <Button
               className={`${path === '/' ? 'active-link' : ''} text-lg px-5 no-underline hover:underline`}
               type="link"
-              href=""
+              href="/"
             >
               Home
             </Button>
@@ -121,3 +127,9 @@ export default function Header(props) {
     </header>
   );
 }
+
+Header.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
