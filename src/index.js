@@ -11,13 +11,13 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    {/* <BrowserRouter> HashRouter used for github pages*/}
     <HashRouter>
       <App />
     </HashRouter>
-    {/* </BrowserRouter> */}
   </React.StrictMode>,
 );
+
+//Use <BrowserRouter> for server deployment, HashRouter used for github pages*/ 
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
