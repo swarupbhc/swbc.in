@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import LandingPage from 'pages/LandingPage';
 import ProjectPage from 'pages/ProjectPage';

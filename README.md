@@ -1,5 +1,5 @@
 # SWBC Technologies
-![alt text](https://github.com/racmathafidz/racxstudio/blob/master/src/assets/images/screely.png)
+![alt text](https://swbc.in)
 
 ### About
 A software house profile website built with ReactJS and TailwindCSS :computer:
@@ -20,7 +20,7 @@ A software house profile website built with ReactJS and TailwindCSS :computer:
 - [**ESLint**](https://eslint.org/) : Linting and formatting
 
 ### Demo
-**Demo :** [racxstudio.vercel.app](https://racxstudio.vercel.app/)
+**Demo :** [swbc.in](https://swbc.in)
 
 ### Available Scripts
 
