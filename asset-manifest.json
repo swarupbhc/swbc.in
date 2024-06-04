@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/swbc.in/static/css/main.e66136db.chunk.css",
-    "main.js": "/swbc.in/static/js/main.344eda85.chunk.js",
-    "main.js.map": "/swbc.in/static/js/main.344eda85.chunk.js.map",
-    "runtime-main.js": "/swbc.in/static/js/runtime-main.c9068a4d.js",
-    "runtime-main.js.map": "/swbc.in/static/js/runtime-main.c9068a4d.js.map",
+    "main.js": "/swbc.in/static/js/main.b4a0fabf.chunk.js",
+    "main.js.map": "/swbc.in/static/js/main.b4a0fabf.chunk.js.map",
+    "runtime-main.js": "/swbc.in/static/js/runtime-main.4537ffcc.js",
+    "runtime-main.js.map": "/swbc.in/static/js/runtime-main.4537ffcc.js.map",
     "static/css/2.2a58199b.chunk.css": "/swbc.in/static/css/2.2a58199b.chunk.css",
-    "static/js/2.10e840dc.chunk.js": "/swbc.in/static/js/2.10e840dc.chunk.js",
-    "static/js/2.10e840dc.chunk.js.map": "/swbc.in/static/js/2.10e840dc.chunk.js.map",
-    "static/js/3.69be7baf.chunk.js": "/swbc.in/static/js/3.69be7baf.chunk.js",
-    "static/js/3.69be7baf.chunk.js.map": "/swbc.in/static/js/3.69be7baf.chunk.js.map",
+    "static/js/2.e1ea373d.chunk.js": "/swbc.in/static/js/2.e1ea373d.chunk.js",
+    "static/js/2.e1ea373d.chunk.js.map": "/swbc.in/static/js/2.e1ea373d.chunk.js.map",
+    "static/js/3.81fa4849.chunk.js": "/swbc.in/static/js/3.81fa4849.chunk.js",
+    "static/js/3.81fa4849.chunk.js.map": "/swbc.in/static/js/3.81fa4849.chunk.js.map",
     "index.html": "/swbc.in/index.html",
     "static/css/2.2a58199b.chunk.css.map": "/swbc.in/static/css/2.2a58199b.chunk.css.map",
     "static/css/main.e66136db.chunk.css.map": "/swbc.in/static/css/main.e66136db.chunk.css.map",
-    "static/js/2.10e840dc.chunk.js.LICENSE.txt": "/swbc.in/static/js/2.10e840dc.chunk.js.LICENSE.txt",
+    "static/js/2.e1ea373d.chunk.js.LICENSE.txt": "/swbc.in/static/js/2.e1ea373d.chunk.js.LICENSE.txt",
     "static/media/NotFound.67759b40.png": "/swbc.in/static/media/NotFound.67759b40.png",
     "static/media/Startup.5ecdcbf5.png": "/swbc.in/static/media/Startup.5ecdcbf5.png",
     "static/media/portfolioHero.bd16fbc2.png": "/swbc.in/static/media/portfolioHero.bd16fbc2.png",
     "static/media/team.917072ad.png": "/swbc.in/static/media/team.917072ad.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c9068a4d.js",
+    "static/js/runtime-main.4537ffcc.js",
     "static/css/2.2a58199b.chunk.css",
-    "static/js/2.10e840dc.chunk.js",
+    "static/js/2.e1ea373d.chunk.js",
     "static/css/main.e66136db.chunk.css",
-    "static/js/main.344eda85.chunk.js"
+    "static/js/main.b4a0fabf.chunk.js"
   ]
 }
