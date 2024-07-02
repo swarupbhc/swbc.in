@@ -7,7 +7,6 @@
 import React from 'react';
 
 import Fade from 'react-reveal/Fade';
-import * as emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -22,12 +21,6 @@ export default function DiscussForm(props) {
       name, company, email, phone, projectIdea,
     } = data;
 
-    const templateParams = {
-      from_name: `${name} - ${company} ( ${phone} - ${email} )`,
-      to_name: 'SWBC Technologies',
-      message: projectIdea,
-    };
-
     if (
       name !== ''
             && company !== ''
@@ -35,18 +28,32 @@ export default function DiscussForm(props) {
             && phone !== ''
             && projectIdea !== ''
     ) {
-      emailjs.send(
-        'service_h4gtndg',
-        'template_a9tvs7a',
-        templateParams,
-        'user_csqIxzN5mKsl1yw4ffJzV',
-      )
-        .then(() => {
-          toast.success('Success! we\'\ll get back to you soon. Thank you!');
-          resetForm();
-        }, (error) => {
-          toast.error(error);
-        });
+      const subject = encodeURIComponent('Project Discussion');
+      const body = encodeURIComponent(
+        `Name: ${name}\n`
+        + `Company: ${company}\n`
+        + `Email: ${email}\n`
+        + `Phone: ${phone}\n\n`
+        + `Project Idea:\n${projectIdea}`,
+      );
+
+      const mailtoLink = `mailto:contact@swbc.in?subject=${subject}&body=${body}`;
+
+      window.location.href = mailtoLink;
+      resetForm();
+
+      // emailjs.send(
+      //   'service_h4gtndg',
+      //   'template_a9tvs7a',
+      //   templateParams,
+      //   'user_csqIxzN5mKsl1yw4ffJzV',
+      // )
+      //   .then(() => {
+      //     toast.success('Success! we\'\ll get back to you soon. Thank you!');
+      //     resetForm();
+      //   }, (error) => {
+      //     toast.error(error);
+      //   });
     } else {
       toast.error('Please fill out the blank form.');
     }
